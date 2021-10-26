@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
 .homepage {
-    display: flex;
+
     flex-direction: column;
     align-items: center;
     justify-content:center;
-    width: 50vw;
-    height: 50vh;
+    width: 30vw;
+    height: 44vh;
     border-radius: 20px;
     box-shadow: 0 0 15px 5px grey;
     background: white;
@@ -12,8 +15,8 @@
 }
 
 .homepage > .button {
-    background: #1877f2;
-    border: 1px solid #1877f2;
+    background: #d9534f;
+    border: 1px solid #d9534f;
     color: #fff;
     font-size: 1.25rem;
     padding: 0.5rem;
@@ -21,4 +24,81 @@
     border-radius: 8px;
     outline: none;
     cursor: pointer;
+    width: 22%;
+    margin-left: 37%;
+    margin-top: -11%;
+}
+
+
+.btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 20px;
+    background: darkslateblue !important;
+    border-radius: 8px;
+}
+
+/* Join Page */
+.join-container {
+	max-width: 400px;
+	margin: 80px auto;
+	color: rgb(255, 255, 255);
+}
+
+.join-header {
+	text-align: center;
+	padding: 20px;
+	background: hsl(259deg 71% 50% / 86%);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.join-main {
+	padding: 30px 40px;
+	background: #7a67ff;
+}
+
+.join-main p {
+	margin-bottom: 20px;
+}
+
+.join-main .form-control {
+	margin-bottom: 20px;
+}
+
+.join-main label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.join-main input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main select {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main .btn {
+	margin-top: 20px;
+	width: 100%;
+    background: currentColor;
+}
+
+@media (max-width: 700px) {
+	.chat-main {
+		display: block;
+	}
+
+	.chat-sidebar {
+		display: none;
+	}
 }

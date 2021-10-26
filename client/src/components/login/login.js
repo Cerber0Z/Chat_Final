@@ -21,7 +21,8 @@ const Login = ({ setLoginUser }) => {
 
     const login = () => {
         axios
-            .post("https://intopcol-back.herokuapp.com/login", user)
+            //intopcol-back.herokuapp.com
+            .post("http://localhost/login", user)
             .then((res) => {
                 alert(res.data.message);
                 setLoginUser(res.data.user);
