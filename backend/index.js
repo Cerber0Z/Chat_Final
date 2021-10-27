@@ -4,9 +4,17 @@ import mongoose from "mongoose";
 import { createServer } from "http";
 import { Server } from "socket.io";
 
-
-
 const app = express();
+
+const httpServer = createServer(app);
+const io = new Server(httpServer);
+
+io.on("connection", (socket) => {
+    socket.on('message', ({ name, message }) => {
+        io.emit('message', { name, message })
+      })
+});
+
 
 
 app.use(express.json());
@@ -74,4 +82,4 @@ app.post("/register", (req, res) => {
 
 const PORT = process.env.PORT || 9002;
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+httpServer.listen(PORT, () => console.log(`Server running on port ${PORT}`));
