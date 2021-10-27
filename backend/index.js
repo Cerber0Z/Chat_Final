@@ -1,8 +1,14 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
+import { createServer } from "http";
+import { Server } from "socket.io";
+
+
 
 const app = express();
+
+
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
@@ -25,11 +31,6 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = new mongoose.model("User", userSchema);
-
-//Routes
-app.get("/", (req, res) => {
-    res.send("Hello word");
-});
 
 app.post("/login", (req, res) => {
     const { email, password } = req.body;
@@ -69,6 +70,7 @@ app.post("/register", (req, res) => {
         }
     });
 });
+
 
 const PORT = process.env.PORT || 9002;
 
